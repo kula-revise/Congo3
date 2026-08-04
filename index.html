@@ -60,7 +60,7 @@
   .story-num { font-family: var(--serif); font-size: clamp(2.6rem,9vw,4rem); font-weight: 800; color: var(--a1); line-height: 1; letter-spacing: -0.02em; }
   .story-unit { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fade); font-weight: 700; margin-top: 0.5rem; }
   .story-rule { width: 100%; height: 1px; background: rgba(27,42,51,0.22); margin: 1.4rem 0 1.6rem; }
-  .story-line { font-size: 1.24rem; line-height: 1.66; margin-bottom: 1.05rem; opacity: 0; transform: translateY(6px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .story-line { font-size: 1.24rem; line-height: 1.66; margin-bottom: 1.05rem; opacity: 0; transform: translateY(6px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .story-line.vis { opacity: 1; transform: translateY(0); }
   .story-line.last { color: var(--a2); font-style: italic; font-weight: 600; }
 
@@ -278,7 +278,7 @@ const FLOW = [
       "Whether the shop is likely to keep the same prices and the same opening hours as before"
     ],
     "correct": 0,
-    "explanation": "You went for the money and what it does, which is the right instinct. Options {opt1}, {opt2} and {opt3} are all reasonable questions, but none of them tests the claim that was made. Who owns a thing and what that ownership produces are two separate questions."
+    "explanation": "You went for the money and what it does. That's the right instinct. {opt1}, {opt2} and {opt3} are all reasonable questions, but none of them tests the claim that was actually made."
   },
   {
     "type": "question",
@@ -291,7 +291,7 @@ const FLOW = [
       "It cannot matter either way, because the ownership has been transferred to a local"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} keeps the judgement open while admitting the evidence looks bad, which is the honest position. Option {opt1} is tempting because a business handed out as a favour usually does fail. But usually is not always, and what matters is still what happens to the shop next."
+    "explanation": "{opt0} keeps the judgement open while admitting the evidence looks bad. That's the honest position. {opt1} tempts because a business handed out as a favour usually is a reward. But you judge that once you know more, not before."
   },
   {
     "type": "content",
@@ -328,7 +328,7 @@ const FLOW = [
       "Copper made up around forty per cent of the country's export earnings in these years"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is strongest because it's economic and political at once. Union Miniere had financed the secession that nearly destroyed the state, so taking it over answered both problems in one act. Option {opt3} is essential background, but on its own it says nothing about who owned what."
+    "explanation": "{opt0}. It's economic and political at once. Union Miniere had financed the secession that nearly destroyed the state, so taking it over answered both problems in one move. {opt3} is essential background, but on its own it says nothing about who owned what."
   },
   {
     "type": "question",
@@ -341,7 +341,7 @@ const FLOW = [
       "The nationalisation of the copper industry took place on 1 January 1967"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is the one with the politics in it. Taking over the company that funded the secession struck at an enemy of the state. Option {opt1} is true and important, but purely economic. The other two are accurate detail with no political angle."
+    "explanation": "{opt0}. That's the one with the politics in it: taking over the company that funded the secession struck at an enemy of the state. {opt1} is true and important, but purely economic. The other two are accurate detail with no political angle."
   },
   {
     "type": "source",
@@ -368,7 +368,7 @@ const FLOW = [
       "Hand each business over to the people who already work in it, as a cooperative"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is what happened, on 30 November 1973. It has the best politics and the worst economics, which is why it's worth thinking hard about. Every other option here had a real cost too. The question is who ends up paying it."
+    "explanation": "{opt0} is what happened, on 30 November 1973. Best politics, worst economics, which is why it's worth thinking hard about. Every other option here had a real case behind it too."
   },
   {
     "type": "content",
@@ -396,7 +396,7 @@ const FLOW = [
       "Raising the incomes of the workers on the plantations"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is the sentence that connects Lesson 2 to Lesson 3. The system ran on loyalty to one man, and here it is paying its bills with the country's productive assets. The policy wasn't badly designed for its real purpose. It was designed very well, for a purpose that had nothing to do with development."
+    "explanation": "{opt0} connects Lesson 2 to Lesson 3. The system ran on loyalty to one man, and here it is paying its bills with the country's productive assets. The point is who got them, not that a policy simply failed."
   },
   {
     "type": "question",
@@ -409,7 +409,7 @@ const FLOW = [
       "By 1976 the government was inviting the former foreign owners to come back"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} goes straight to intention, and intention is what effectiveness turns on. Options {opt2} and {opt3} are tempting because both are true and damning. But each is a consequence, and a consequence can always be blamed on something else. Who received the assets is the fact hardest to explain away."
+    "explanation": "{opt0}. It goes straight to intention, and intention is what effectiveness turns on. {opt2} and {opt3} tempt because both are true and damning. But each is a consequence, and a consequence can always be blamed on something else. Who received the assets is the fact hardest to explain away."
   },
   {
     "type": "question",
@@ -432,7 +432,7 @@ const FLOW = [
       "2": 0,
       "3": 1
     },
-    "explanation": "Nationalisation was the copper, taken into the state and run by Gecamines. Zairianisation was the shops and farms, given to individuals, and undone within three years. Blur the two and you cannot praise one while condemning the other, which is what the argument needs."
+    "explanation": "Nationalisation was the copper, taken into the state and run by Gecamines. Zairianisation was the shops and farms, handed to individuals, and undone within three years. Blur the two and you can't praise one while condemning the other. Keeping them apart is the heart of this topic."
   },
   {
     "type": "question",
@@ -445,7 +445,7 @@ const FLOW = [
       "Zairianisation was simply the second stage of the nationalisation policy, extending state ownership from mining into farming and trade"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} names the difference that matters: one moved assets to the state, the other to named individuals. That distinction lets you praise one policy and condemn the other without contradicting yourself. Option {opt3} is wrong on the facts, since Zairianised businesses were never state owned."
+    "explanation": "{opt0} names the difference that matters: one moved assets to the state, the other to named individuals. That lets you praise one policy and condemn the other without contradicting yourself. {opt3} is wrong on the facts. Zairianised businesses were never state owned."
   },
   {
     "type": "question",
@@ -458,7 +458,7 @@ const FLOW = [
       "It cannot be judged effective or ineffective, because it was overtaken almost immediately by a collapse in world copper prices"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} asks effective at what, which is the only honest way to weigh a policy that plainly succeeded at something. Option {opt1} is tempting because it's nearly right. But it stops one step too soon, and it reads as an attack rather than a judgement."
+    "explanation": "{opt0} asks effective at what, the only honest way to weigh a policy that plainly worked at something. {opt1} tempts because it's nearly right. But it stops one step too soon, and it reads as an attack rather than a judgement."
   },
   {
     "type": "question",
@@ -471,7 +471,7 @@ const FLOW = [
       "As a success, since a poor country that builds dams and steel mills is clearly industrialising"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} uses the projects as evidence of a pattern, which is what evidence is for. Option {opt1} is tempting because the waste was real. But there was a plan, and saying there was none actually lets Mobutu off, because it turns deliberate choices into simple incompetence."
+    "explanation": "{opt0} uses the projects as evidence of a pattern. That's what evidence is for. {opt1} tempts because the waste was real. But there was a plan, and saying there wasn't actually lets Mobutu off. It turns deliberate choices into simple incompetence."
   },
   {
     "type": "question",
@@ -484,7 +484,7 @@ const FLOW = [
       "It cannot be judged, because the two policies affected totally different parts of the economy and simply cannot be compared at all"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} weighs one against the other and lands on a reasoned position: real income on one side, real wreckage on the other. Option {opt1} is too absolute, and the growing debt knocks it over. Option {opt3} is tempting because the two policies were different, but refusing to compare is refusing to answer."
+    "explanation": "{opt0} weighs one against the other and lands somewhere: real income on one side, real wreckage on the other. {opt1} is too absolute, and the growing debt knocks it over. {opt3} tempts because the two policies were different. But refusing to compare is refusing to answer."
   },
   {
     "type": "carousel",
@@ -530,7 +530,7 @@ const FLOW = [
       "Zairianisation returned the economy to the people of Zaire for the first time since colonial rule, which was the most important economic achievement of Mobutu's presidency"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} repeats the shape of your political argument with economic evidence, which is how a line of argument holds together. Option {opt1} is tempting because it's accurate and well dated. But it's inert: the paragraph most people write, full of facts and arguing nothing."
+    "explanation": "{opt0} carries the same shape as your political point, now with economic evidence. That's how a line of argument holds together. {opt1} tempts because it's accurate and well dated. But it's inert: the paragraph most people write, full of facts and arguing nothing."
   },
   {
     "type": "runsum",
@@ -987,7 +987,7 @@ function showResults(){
   document.getElementById("finish-btn").addEventListener("click",()=>{
     const back=document.createElement("div");
     back.className="pop-back";
-    back.innerHTML=`<div class="pop"><div class="pop-label">Lesson complete</div><div class="pop-text">Click on the arrow above to continue to the next lesson.</div><button class="pop-btn" id="fin-ok">Close</button></div>`;
+    back.innerHTML=`<div class="pop"><div class="pop-label">Lesson 3 complete</div><div class="pop-text">Click on the arrow above to continue to the next lesson.</div><button class="pop-btn" id="fin-ok">Close</button></div>`;
     document.body.appendChild(back);
     document.getElementById("fin-ok").addEventListener("click",()=>back.remove());
   });
