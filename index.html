@@ -216,11 +216,13 @@ body:not(.bright) .btn-primary .sa, body:not(.bright) #next-btn .sa, body:not(.b
 </style>
 </head>
 <body>
+<script>/* kula: LMS embed events. "completed" fires once, when the learner reaches the closing screen. "advance" fires from the final button. */
+(function(){var sentCompleted=false;window.kulaEmbed=function(ev){if(ev==="completed"){if(sentCompleted)return;sentCompleted=true;}try{window.parent.postMessage({type:"lms-embed-event",version:"1.0",payload:{event:ev}},"*");}catch(e){}};})();</script>
 <style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body:not(.bright) #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.essaynote{background:color-mix(in srgb, var(--a2) 8%, transparent);border:1px solid color-mix(in srgb, var(--a2) 32%, transparent);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
 .essaynote-label{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--a2);font-weight:700;margin-bottom:0.5rem;}
 .essaynote h2{margin:0 0 0.5rem;}
 .essaynote p:last-child{margin-bottom:0;}
-</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-theme";function paint(){var d=!document.body.classList.contains("bright");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("bright");try{localStorage.setItem(K,document.body.classList.contains("bright")?"bright":"dark")}catch(e){}paint()};try{if(localStorage.getItem(K)==="bright")document.body.classList.add("bright")}catch(e){document.body.classList.add("dark")}paint();})();</script>
+</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-mode";function paint(){var d=!document.body.classList.contains("bright");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("bright");try{localStorage.setItem(K,document.body.classList.contains("bright")?"light":"dark")}catch(e){}paint()};try{if(localStorage.getItem(K)==="light")document.body.classList.add("bright")}catch(e){document.body.classList.add("dark")}paint();})();</script>
 <div class="container">
   <div class="top-bar hidden" id="top-bar">
     <div class="top-meta"><span id="lesson-tag">Kula Revise · Grade 12 · The Congo</span><span class="top-count" id="step-count"></span></div>
@@ -251,8 +253,8 @@ const RESULTS = {
   "eyebrow": "Lesson 3 report",
   "title": "Where you stand",
   "bands": {
-    "excellent": "You are keeping nationalisation and Zairianisation cleanly apart, which is where the marks live. Move on to Lesson 4.",
-    "strong": "Strong work. Look again at anything you missed on the two policies, then go to Lesson 4.",
+    "excellent": "You are keeping nationalisation and Zairianisation cleanly apart, which is where the marks live. Continue to Lesson 4.",
+    "strong": "Strong work. Look again at anything you missed on the two policies, then continue to Lesson 4.",
     "solid": "The facts are landing but the distinction is slipping. Reread the two policy cards, then carry on.",
     "patchy": "The two policies are running together. Go back to the nationalisation and Zairianisation cards and keep them separate, then try again.",
     "start": "Go slowly. One policy took the copper into the state and worked. The other gave shops to friends and failed. Learn which is which, then work the lesson again."
@@ -333,7 +335,7 @@ const FLOW = [
       "Copper made up around forty per cent of the country's export earnings in these years"
     ],
     "correct": 0,
-    "explanation": "{opt0}. It's economic and political at once. Union Miniere had financed the secession that nearly destroyed the state, so taking it over answered both problems in one move. {opt3} is essential background, but on its own it says nothing about who owned what."
+    "explanation": "{opt0}. It is economic and political at once. Union Miniere had paid for the secession that nearly destroyed the state. Taking it over answered both problems in one move. {opt3} is essential background. On its own it says nothing about who owned what."
   },
   {
     "type": "question",
@@ -346,7 +348,7 @@ const FLOW = [
       "The nationalisation of the copper industry took place on 1 January 1967"
     ],
     "correct": 0,
-    "explanation": "{opt0}. That's the one with the politics in it: taking over the company that funded the secession struck at an enemy of the state. {opt1} is true and important, but purely economic. The other two are accurate detail with no political angle."
+    "explanation": "{opt0}. That is the one with the politics in it. Taking over the company that funded the secession struck at an enemy of the state. {opt1} is true and important, and purely economic. The other two are accurate detail with no political angle."
   },
   {
     "type": "source",
@@ -401,7 +403,7 @@ const FLOW = [
       "Raising the incomes of the workers on the plantations"
     ],
     "correct": 0,
-    "explanation": "{opt0} connects Lesson 2 to Lesson 3. The system ran on loyalty to one man, and here it is paying its bills with the country's productive assets. The point is who got them, not that a policy simply failed."
+    "explanation": "{opt0} connects Lesson 2 to Lesson 3. The system ran on loyalty to one man, and here it is paying its bills with the country's productive assets. Say who got them. Do not stop at the policy having failed."
   },
   {
     "type": "question",
@@ -437,7 +439,7 @@ const FLOW = [
       "2": 0,
       "3": 1
     },
-    "explanation": "Nationalisation was the copper, taken into the state and run by Gecamines. Zairianisation was the shops and farms, handed to individuals, and undone within three years. Blur the two and you can't praise one while condemning the other. Keeping them apart is the heart of this topic."
+    "explanation": "Nationalisation was the copper, taken into the state and run by Gecamines. Zairianisation was the shops and farms, handed to individuals, and undone within three years. Blur the two and you cannot praise one while condemning the other. Keep them apart and this whole topic opens up."
   },
   {
     "type": "question",
@@ -450,7 +452,7 @@ const FLOW = [
       "Zairianisation was simply the second stage of the nationalisation policy, extending state ownership from mining into farming and trade"
     ],
     "correct": 0,
-    "explanation": "{opt0} names the difference that matters: one moved assets to the state, the other to named individuals. That lets you praise one policy and condemn the other without contradicting yourself. {opt3} is wrong on the facts. Zairianised businesses were never state owned."
+    "explanation": "{opt0} names the difference that matters. One moved assets to the state, the other to named individuals. That lets you praise one policy and condemn the other without contradicting yourself. {opt3} is wrong on the facts. Zairianised businesses were never state owned."
   },
   {
     "type": "question",
@@ -463,7 +465,7 @@ const FLOW = [
       "It cannot be judged effective or ineffective, because it was overtaken almost immediately by a collapse in world copper prices"
     ],
     "correct": 0,
-    "explanation": "{opt0} asks effective at what, the only honest way to weigh a policy that plainly worked at something. {opt1} tempts because it's nearly right. But it stops one step too soon, and it reads as an attack rather than a judgement."
+    "explanation": "{opt0} asks effective at what. That is the only honest way to weigh a policy that plainly worked at something. {opt1} tempts you because it is nearly right. It stops one step too soon, and it reads as an attack rather than a judgement."
   },
   {
     "type": "question",
@@ -936,6 +938,7 @@ function bindToggles(){
 
 // ============ RESULTS ============
 function showResults(){
+  kulaEmbed("completed");
   topBar.classList.add("hidden");
   nav.classList.add("hidden");
   let correct=0;
@@ -972,19 +975,13 @@ function showResults(){
     ${runsum}
     <div class="results-actions">
       <button class="btn-secondary" id="restart-btn">Restart lesson</button>
-      <button class="btn-primary" id="finish-btn">Finish</button>
+      <button class="btn-primary" id="finish-btn">Continue to Lesson 4&nbsp;&rarr;</button>
     </div>`;
   document.getElementById("restart-btn").addEventListener("click",()=>{
     state.idx=-1; state.answers={}; state.revealed={}; state.order={}; state.carRead={}; state.interState={}; state.poppedBuild={};
     renderCover();
   });
-  document.getElementById("finish-btn").addEventListener("click",()=>{
-    const back=document.createElement("div");
-    back.className="pop-back";
-    back.innerHTML=`<div class="pop"><div class="pop-label">Lesson 3 complete</div><div class="pop-text">Tap Done to continue to Lesson 4, The Reckoning.</div><button class="pop-btn" id="fin-ok">Done</button></div>`;
-    document.body.appendChild(back);
-    document.getElementById("fin-ok").addEventListener("click",()=>back.remove());
-  });
+  document.getElementById("finish-btn").onclick=()=>kulaEmbed("advance");
 }
 
 function isRight(i){
